@@ -5,3 +5,14 @@
 <div class="form-group">
   <%= form.submit 'Create List', class: 'btn btn-primary' %>
 </div>
+
+<h1>@list.name</h1>
+
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.movie.title %>
+      <%= link_to 'Delete', list_bookmark_path(@list, bookmark), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
