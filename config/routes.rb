@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'bookmarks/new'
+
+  resources :lists, only: %i[index new create] do
+    resources :bookmarks, only: %i[index new create]
+  end
+  resources :bookmarks, only: %i[destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

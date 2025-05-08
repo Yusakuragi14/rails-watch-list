@@ -67,3 +67,4 @@ gem 'bootstrap'
 gem 'simple_form'
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
+gem "faker"
